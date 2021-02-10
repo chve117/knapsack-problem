@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>KnapsackProblem</title>
+
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/one-page-wonder.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+  <script src="dist/snap.svg-min.js"></script>
+  <script language="javascript" type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.2.0/lib/p5.min.js"></script>
+  <script language="javascript" type="text/javascript" src="js/sketch.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Knapsack Problem</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Recursión</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="tabla.html">Llenado de Tabla</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ejemplo.html">Paso a paso</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br/><br/><br/>
+  <section id="intro">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col">
+          <div class="p-5">
+            <h2 class="display-4">Utilizando Recursión </h2>
+            <p>Una forma de resolver este problema es utilizando la recursión.</p>
+            <p>Utilizando la recursión podemos construir un árbol con todas las combinaciones posibles, como se muestra a continuación: </p>
+            <p><label>Capacidad de la mochila</label>&nbsp;&nbsp;<input type="number" id="Capacidad" value="10"></p>
+            <p>Peso / Valor</p>
+            <p><label>Item 1: </label>&nbsp;&nbsp;<input type="number" class="w" value="6"/>&nbsp;&nbsp;<input type="number" class="v" value="2"/></p>
+            <p><label>Item 2: </label>&nbsp;&nbsp;<input type="number" class="w" value="4"/>&nbsp;&nbsp;<input type="number" class="v" value="3" /></p>
+            <p><label>Item 3: </label>&nbsp;&nbsp;<input type="number" class="w" value="2"/>&nbsp;&nbsp;<input type="number" class="v" value="1" /></p>
+            <p><label>Item 4: </label>&nbsp;&nbsp;<input type="number" class="w" value="1"/>&nbsp;&nbsp;<input type="number" class="v" value="3" /></p>
+            <div><button class="btn btn-primary rounded-pill mt-3" onclick="setup()">Construir Árbol</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col" >
+                        <h5 id="final"></h5>
+
+          <div class="p-5">
+
+            <p>Caminos del árbol: </p>
+            <div id="ramas">            
+              <div id="nodos">
+              </div>    
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div id="mi"></div>
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

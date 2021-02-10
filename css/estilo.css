@@ -1,0 +1,134 @@
+/*.my-fixed-item{
+    position: sticky;
+    top:80px;
+    border:10px solid #1B75CE;
+    display:inline-block;
+
+}*/
+/*
+body{
+    width: 100%;
+}
+.principal{
+    width: auto;
+}
+.my-fixed-item{
+    max-width: 100%;
+    width: 100%;
+    flex:1;
+    min-width: 800px;
+}
+.my-fixed-item:first-child{
+    flex: 2;
+    padding: 25px;
+    margin: 20px;
+}
+.my-fixed-item div{
+    padding: 25px;
+}
+*/
+.contenedor{
+    width: 100%;
+    overflow: hidden;
+}
+.my-fixed-item{
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  
+    text-align: center;
+}
+.uno{
+    width: 100%;
+    box-sizing: border-box;
+}
+.dos{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    box-sizing: border-box;
+
+}
+@media screen and (max-width: 800px)
+{
+  .dos{
+      width: 100%;
+  }
+
+}
+p {
+   /* font-weight: bold;*/
+    font-family: Quicksand;
+    font-size: 100%;
+  }
+  p.titulo{
+	text-align: center;
+	margin-bottom: 1%;
+	font-size: 3.5em;
+	color: #001B48;
+}
+p.texto{
+	margin: 2%;
+	font-size: 1.5em;
+	color: #02457A;
+}
+.wrapper{
+	margin-top: 0;
+    margin-bottom: 0;
+}
+section.contenedores{
+	width: 100%;
+	min-height: 666px; 
+	max-height: 80%;
+	background-position: 10% 50%;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: 45% 80%;
+	overflow: hidden;
+	padding-bottom: 4%;
+/*	border-bottom: 1px solid #D6D6D6; */
+
+
+}
+section#cont1{
+   /* background-image: url("../img/moch.png");*/
+   background-image: url("../img/moch11.png");
+    background-size: 50%;
+    background-attachment: fixed;
+
+}
+section#cont2{
+   /* background-image: url("pn1.png");*/
+   background-image: url("../img/finalle2.png");
+    background-size: 50%;
+    background-attachment: fixed;
+}
+section#cont3{
+    /* background-image: url("pn1.png");*/
+    background-image: url("../img/finalmo3.png");
+     background-size: 50%;
+     background-attachment: fixed;
+ }
+ section#cont4{
+    /* background-image: url("pn1.png");*/
+    background-image: url("../img/finalmo4.png");
+     background-size: 50%;
+     background-attachment: fixed;
+ }
+  
+
+section.texto{
+	float: right;
+	width: 50%;
+    min-height: 80%;
+    
+}
+html{
+    height: 100vh;
+}
+
+body {
+  max-height: 500vh;
+  margin: 0;
+  font-family: Quicksand;
+}

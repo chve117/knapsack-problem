@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Algoritmo de la mochila</title>
+    <script src="snap/snap.svg-min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="snap/eskju.jquery.scrollflow.min.js"></script>
+    <link href="css/estilo.css" rel="stylesheet" type="text/css">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <!-- Custom styles for this template -->
+  <link href="css/one-page-wonder.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,user-scalable=no, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0">
+    <script>
+    var box = document.getElementById("box");
+    Firmin.animate(box, {
+        skew: {
+            x: "45deg",
+            y: "30deg"
+        }
+    }, "2.1s");
+    </script>
+</head>
+<body width:100%;>
+    <br><br><br><br>
+      <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Knapsack Problem</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="recursion.html">Recursión</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="tabla.html">Llenado de Tabla</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Paso a paso</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+    <div class="contenedor">    <div class="principal">
+  
+    <p class="titulo">Explicación del algoritmo</p><br/>
+    <p class="texto">Dados los pesos y valores de n artículos, coloque estos artículos en una mochila de capacidad W para obtener el valor total máximo en la mochila. En otras palabras, dadas dos matrices de enteros val [0..n-1] y wt [0..n-1] que representan valores y pesos asociados con n elementos respectivamente. También dado un entero W que representa la capacidad de la mochila, se averigüa el subconjunto de valor máximo de val [] tal que la suma de los pesos de este subconjunto sea menor o igual que W. No puede romper un artículo, elija el artículo completo o not pick it (propiedad 0-1). <br/>
+      El árbol de recursión es para las siguientes entradas de muestra.</p>
+    <div align="center">
+        <img  src="img/mochilas.png" height="20%" width="20%"/>
+    </div>
+
+
+</br></br>
+    <div>
+      <p  class="texto">
+            En el siguiente árbol de recursividad se hace referencia al algoritmo de knapsack. Los dos parámetros indicados en el 
+            siguiente árbol de recursividad son n y W. <br/>
+            El árbol de recursividad es para las siguientes entradas de muestra.<br/>
+        </p>
+        <p align="center" class="texto">
+            W = 15 <br>
+         wt = {        <img src="img/dosk.png" height="10%" width="10%"/>,           <img src="img/ochok.png" height="10%" width="10%"/>,               <img src="img/unok.png" height="10%" width="10%"/>    }
+      <br>val = {        <img src="img/val2.png" height="10%" width="10%"/>,           <img src="img/val4.png" height="10%" width="10%"/>,                <img src="img/valdos.png" height="10%" width="10%"/>   }
+        </p>
+    </div>
+    </div>
+    <p class="texto">
+      wt [] = {2, 8, 1}, W = 15, val [] = {10, 4, 2}</p>>
+    <div class="my-fixed-item">
+        <div  class="uno scrollflow -slide-right -pacity">
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="img/finala.png" height="10%" width="10%"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </br>
+        <img src="img/finalr.png" height="10%" width="10%"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="img/mochila.png" height="20%" width="20%"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="img/finu.png" height="10%" width="10%"/>
+        </br></br>
+        <p class="texto">Se basa en la fórmula: knapSack(int W, int wt[], int val[], int n),  se tienen dos casos:</p>
+        <p class="texto">El caso donde el item sobrepase la capacidad de la mochila: knapSack(W, wt, val, n - 1) </p>
+        <br>
+        <p class="texto">O el caso en donde retorna el valor máximo ya sea que se incluya o no:</p> 
+        <p class="texto">max(val[n - 1] + knapSack(W - wt[n - 1], wt, val, n - 1), knapSack(W, wt, val, n - 1))</p>
+    </div>
+    </div>
+   
+    
+    <br><br><br><br><br><br><br>
+    <div class="wrapper">
+		<section class="contenedores" id="cont1">
+			<section class="texto">
+				<p class="texto">
+          <br><br><br><br><br><br><br> El siguiente árbol de recursión tiene una raíz que tiene un valor de 15 que corresponde a W.
+					<br>
+				
+				</p>
+			</section>
+        </section>
+        <section class="contenedores" id="cont2">
+			<section class="texto">
+				<p class="texto">
+					<br><br><br><br><br>
+					En el nodo 1 (izquierdo) podemos observar que se inserta un item 1 de valor dos y peso de 1kg<br>
+          mientras que en el nodo dos mantenemos la capacidad integra de la mochila.
+				</p>
+			</section>
+        </section>
+        <section class="contenedores" id="cont3">
+			<section class="texto">
+				<p class="texto">
+					<br><br><br><br>
+					Se repite el proceso anterior, el segundo item entra en el algoritmo, donde existen cuatro opciones:<br>
+          Opción 1: El item 1 y 2 pueden ingresar a la mochila al mismo tiempo.</br>
+          <p class="texto">Opción 2: El item 2 no puede ingresar a la mochila y por tanto solo se introduce el item 1.</p>
+          <p class="texto">Opción 3: No se ingresa el item 1 pero si se ingresa el item 2.</p>
+        <p class="texto">Opción 4: Ninguno de los  items ingresa a la mochila</p>
+				</p>
+			</section>
+        </section>
+        <section class="contenedores" id="cont4">
+			<section class="texto">
+				<p class="texto">
+					<br><br><br><br><br>
+				  Se vuelve a realizar el mismo análisis, nos encontramos con 8 casos similares a los expuestos en el paso anterior.<br>
+          Se retorna el valor de la solución de la mochila con la función recursiva:
+          <br>
+          max(val[n - 1] + knapSack(W - wt[n - 1], wt, val, n - 1), knapSack(W, wt, val, n - 1)) = 16
+				
+				</p>
+			</section>
+        </section>
+
+		
+    </div>
+    <div align="center" class="dos scrollflow -slide-top -pacity">
+        <img src="img/mochila.png" height="15%" width="15%" align="center"/></br>
+        <img src="img/diagonalh.png" height="7%" width="5%"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="img/Diagonal.png" height="4%" width="6%"/></br>
+        <img src="img/catorcek.png" height="8%" width="8%"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="img/quincek.png" height="8%" width="8%"/></br>&nbsp;
+        <img src="img/diagonalh.png" height="5%" width="5%"/>&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="img/Diagonal.png" height="4%" width="6%"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="img/diagonalh.png" height="5%" width="5%"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="img/Diagonal.png" height="4%" width="6%"/></br>&nbsp;&nbsp;
+        <img src="img/seisk.png" height="8%" width="8%"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="img/catorcek.png" height="8%" width="8%"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="img/sietek.png" height="8%" width="8%"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="img/quincek.png" height="8%" width="8%"/></br>
+        <img src="img/diagonalh.png" height="3%" width="5%"/>&nbsp;
+        <img src="img/Diagonal.png" height="4%" width="6%"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="img/diagonalh.png" height="3%" width="5%"/>
+        <img src="img/Diagonal.png" height="4%" width="6%"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="img/diagonalh.png" height="3%" width="5%"/>
+        <img src="img/Diagonal.png" height="4%" width="6%"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="img/diagonalh.png" height="3%" width="5%"/>
+        <img src="img/Diagonal.png" height="4%" width="6%"/></br>
+        <img src="img/cuatrok.png" height="8%" width="8%"/>&nbsp;
+        <img src="img/seisk.png" height="8%" width="8%"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="img/docek.png" height="8%" width="8%"/>
+        <img src="img/catorcek.png" height="8%" width="8%"/>&nbsp;&nbsp;&nbsp;
+        <img src="img/cincok.png" height="8%" width="8%"/>
+        <img src="img/sietek.png" height="8%" width="8%"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="img/trecek.png" height="8%" width="8%"/>
+        <img src="img/quincek.png" height="8%" width="8%"/></br>
+    </div>
+    <p class="texto">La solución se encuentra en aquella rama con el valor más alto, que no exceda la capacidad anteriormente definida.</p>
+</div>
+</body>
+</html>

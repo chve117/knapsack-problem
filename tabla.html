@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>KnapsackProblem</title>
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/one-page-wonder.min.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+  <script src="dist/snap.svg-min.js"></script>
+  <link rel="stylesglobal" href="stylesglobal.css">
+</head>
+<body>
+  <!-- Navigation -->
+   
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Knapsack Problem</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="recursion.html">Recursión</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Llenado de Tabla</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ejemplo.html">Paso a paso</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br/><br/><br/>
+ <section id="intro">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col">
+          <div class="p-5">
+            <h2 class="display-4">Programación Dinámica </h2>
+                <p>Este problema puede ser resuelto mediante la programación dinámica.</p>
+                <p>En la programación dinámica construimos una tabla con columnas que vaya desde 1 hasta W y en las filas todos los pesos de los objetos.</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col order-lg-1">
+          <div class="p-5">
+          <p>
+            <label>Ingrese la capacidad de la mochila: </label> &nbsp;&nbsp;
+            <input type="number" id="pesoMax" value="5" />
+          </p>
+          <p>
+            <label>Ingrese la cantidad de items: </label> &nbsp;&nbsp;
+            <input type="number" id="noItems" value="4" />
+          </p>
+           <button class="btn btn-primary rounded-pill mt-3" onClick="borrar()">Send</button>          
+        </div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="container">
+      <div class="p-5">
+          <br>
+          <p>Con estos datos podemos constuimos la tabla, posteriormente ingresamos la información de cada item: su peso y su valor. A continuación puedes modificar los valores y ver las respuesta del algoritmo.</p>      
+      </div>
+  </div>
+
+    <div class="container" >
+      <div class="row align-items-center">
+          <div class="p-5" style="text-align: center;">
+           <div class="row">
+              <div class="card">
+                <br>
+                <p >Ingrese los pesos</p>
+                  <div class="card-body" id="campoPesos">
+                    <div class="form-group">
+                        <input type="text" name="dato[]" placeholder="peso 1"
+                        class="form-control datoInputPeso" value="1">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="dato[]" placeholder="peso 2"
+                        class="form-control datoInputPeso" value="2">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="dato[]" placeholder="peso 3"
+                        class="form-control datoInputPeso" value="3">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="dato[]" placeholder="peso 4"
+                        class="form-control datoInputPeso" value="4">
+                    </div>
+                  </div>
+              </div> 
+            <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+            <div class="card">
+              <br>
+              <p>Ingrese los valores</p>
+                 <div class="card-body" id="campoValores">
+                     <div class="form-group">
+                         <input type="text" name="dato[]" placeholder="valor 1"
+                         class="form-control datoInputValor" value="5">
+                     </div>
+                     <div class="form-group">
+                         <input type="text" name="dato[]" placeholder="valor 2"
+                         class="form-control datoInputValor" value="6">
+                     </div>
+                     <div class="form-group">
+                         <input type="text" name="dato[]" placeholder="valor 3"
+                         class="form-control datoInputValor" value="7">
+                     </div>
+                     <div class="form-group">
+                         <input type="text" name="dato[]" placeholder="valor 4"
+                         class="form-control datoInputValor" value="8">
+                     </div>
+                     
+                 </div>
+             </div>
+
+          </div>
+          <br>
+          <div class="row" >
+            <p id="resultado">El resultado es :<br><br><div id="respuesta"></div></p>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary"
+                     onclick="viewsArrayInput()">Llenar Tabla</button>
+      </div>
+    </div>
+</section>
+
+
+  <section id="intro">
+  </section>
+  
+        
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/mochila.js"></script>
+</body>
+
+</html>
